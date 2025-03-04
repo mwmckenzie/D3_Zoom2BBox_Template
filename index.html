@@ -5,8 +5,14 @@
     <title>D3 Zoom to BB OnClick</title>
     <script src="js/d3/d3.v7.js"></script>
     <script src="js/topojson/topojson.js"></script>
+    <style>
+        #chart {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+
 <div id="chart"></div>
 <script>
 
@@ -14,8 +20,9 @@
     let stateBordersData = null;
 
     // Specify the chart’s dimensions.
-    const width = window.screen.width;
-    const height = Math.min(width, 720);
+    const width = window.screen.width * 0.9;
+    const height = window.screen.height * 0.8;
+    //const height = Math.min(width, 720);
 
     // Prepare a canvas.
     const devicePxlRatio = window.devicePixelRatio ?? 1;
@@ -61,7 +68,8 @@
         .attr("viewBox", [0, 0, width, height])
         .attr("width", width)
         .attr("height", height)
-        .style("width", `${width}px`)
+        //.attr("style", `max-width: 100%; height: auto; display: block; margin: 0 14px;`)
+        //.style("width", `${width}px`)
         .on("click", reset);
 
     const path = d3.geoPath();
