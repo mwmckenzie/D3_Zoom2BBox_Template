@@ -11,6 +11,15 @@
 <script>
 
     let states = null;
+    let stateBordersData = null;
+
+    // Specify the chart’s dimensions.
+    const width = window.screen.width;
+    const height = Math.min(width, 720);
+
+    // Prepare a canvas.
+    const devicePxlRatio = window.devicePixelRatio ?? 1;
+    
     
     function reset() {
         states.transition().style("fill", null);
@@ -42,14 +51,7 @@
         g.attr("stroke-width", 1 / transform.k);
     }
     
-    let stateBordersData = null;
-
-    // Specify the chart’s dimensions.
-    const width = window.screen.width * 0.9;
-    const height = Math.min(width, 720) * 0.9; // Observable sets a responsive *width*
-
-    // Prepare a canvas.
-    const devicePxlRatio = window.devicePixelRatio ?? 1;
+    
 
     const zoom = d3.zoom()
         .scaleExtent([1, 8])

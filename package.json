@@ -1,10 +1,17 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "D3_Zoom2BBox_Template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": true
+  "private": false,
+  "dependencies": {
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.12.0"
+  }
 }
+
