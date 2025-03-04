@@ -19,13 +19,15 @@
     let states = null;
     let stateBordersData = null;
 
-    // Specify the chart’s dimensions.
-    const width = window.screen.width * 0.9;
-    const height = window.screen.height * 0.8;
-    //const height = Math.min(width, 720);
-
     // Prepare a canvas.
     const devicePxlRatio = window.devicePixelRatio ?? 1;
+
+    // Specify the chart’s dimensions.
+    const width = window.screen.width * 0.9 * devicePxlRatio;
+    const height = window.screen.height * 0.8 * devicePxlRatio;
+    //const height = Math.min(width, 720);
+
+    
     
     
     function reset() {
@@ -68,7 +70,7 @@
         .attr("viewBox", [0, 0, width, height])
         .attr("width", width)
         .attr("height", height)
-        //.attr("style", `max-width: 100%; height: auto; display: block; margin: 0 14px;`)
+        .attr("style", `max-width: 100%; height: auto; display: block; `)
         //.style("width", `${width}px`)
         .on("click", reset);
 
